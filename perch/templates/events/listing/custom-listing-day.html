@@ -1,0 +1,9 @@
+<perch:before><ul class="calendar"></perch:before>
+  <li>
+    <h3 class="date"><perch:events id="eventDateTime" format="l, jS F Y" /></h3>
+    <div class="vevent">
+    <strong><perch:events id="eventTitle" /></strong>
+    <perch:events id="eventDescHTML" encode="false" />
+    </div>
+  </li>
+<perch:after></ul></perch:after>

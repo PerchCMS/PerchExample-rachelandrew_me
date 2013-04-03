@@ -1,0 +1,14 @@
+<div class="vevent">
+    <h2 class="summary"><perch:events id="eventTitle" /></h2>
+
+    <p class="dtstart"><span class="value-title" title="<perch:events id="eventDateTime" format="c" />"><perch:events id="eventDateTime" format="%c" /></span></p>
+
+    <div class="description"><perch:events id="eventDescHTML" type="textarea" textile="true" editor="markitup" encode="false" /></div>
+
+    <p class="category"><perch:events id="category_names" encode="false" /></p>
+    
+    <perch:if exists="image">
+        <img src="<perch:events id="image" type="image" label="Image" width="240" crop="true" />" alt="<perch:events id="eventTitle" />" />
+    </perch:if>
+
+</div>

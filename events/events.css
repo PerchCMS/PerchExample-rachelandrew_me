@@ -1,0 +1,198 @@
+ul.calendar-nav {
+    margin: 1.5em 0;
+    overflow: hidden;
+    padding-top: .8em;
+}
+
+ul.calendar-nav li {
+    list-style-type: none;
+}
+
+a.paging-prev {
+    padding-left: 7.1428571%; /* 20 / 280 */
+}
+
+a.paging-next {
+    padding-right: 7.1428571%; /* 20 / 280 */
+}
+    
+ul.calendar-nav h2 {
+    margin-top: 1.1em;
+}
+    
+ul.calendar-nav h2 a {
+    background: none;
+    padding-left: 0;
+}
+
+/* *** CALENDAR *** 
+all screen widths */
+table.calendar {
+    width: 100%;
+}
+
+table.calendar tbody {
+    border-top: 1px solid #e2e2e2;
+    border-left: 1px solid #e2e2e2;
+}
+
+table.calendar th {
+    display: table-cell;
+    width: 14.285714286%;/* 1/7 of width as there's always 7 days in the week */
+    font-weight: bold;
+}
+
+table.calendar th abbr {
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+table.calendar td {
+    border: 1px solid #e2e2e2;
+    text-align: left;
+	vertical-align: top;
+    width: 14.285714286%;/* 1/7 of width as there's always 7 days in the week */
+}
+
+table.calendar td.notinmonth {
+    background: #e2e2e2;
+}
+
+table.calendar .day {
+    display: block;
+}
+
+table.calendar .vevent {
+    border-top: 1px dotted #dee0e0;
+    display: block;
+    padding: .5em 0;
+}
+
+
+table.calendar a.vevent abbr {
+    font-weight: bold;
+    margin-right: .5em;
+}
+
+table.calendar .has-event { /* just highlight days which have events */
+    background: #00348e;
+    color: #fff;   
+}
+
+table.calendar .has-event .eventwrap {
+	padding: 0.5em;
+}
+    
+table.calendar .has-event a,
+table.calendar .has-event span {
+    color: #fff;
+}
+
+/* on narrow widths we hide the summary */
+table.calendar tr td .vevent span.summary { 
+        display: none;
+}
+
+/* *** LISTING VIEW *** */
+ul.calendar {
+    border-top: 1px solid #dee0e0;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    list-style-type: none;
+}
+
+ul.calendar ul {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+ul.calendar > li {
+    border-bottom: 1px solid #dee0e0;
+    padding-bottom: .8em;
+}
+
+ul.calendar li h3 {
+    background: #f0f0f0;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: .3em .8em;
+}
+
+ul.calendar li .vevent {
+    padding: .8em;
+}
+
+ul.calendar .vevent:nth-of-type(2n) {
+    border-top: 1px dotted #dee0e0;
+}
+
+ul.calendar .vevent h4 {
+    margin: 0;
+}
+
+ul.calendar .vevent h4 a {
+    font-weight: normal;
+}
+    
+@media only screen and (min-width: 460px) {
+    ul.calendar-nav li {
+        float: left;
+        margin-right: 4.3478261%; /* 20 / 460 */
+        width: 30.4347826%; /* 140 / 460 */
+    }
+        
+    ul.calendar-nav li h2 {
+        margin-top: 0;
+        text-align: center;
+    }
+        
+    ul.calendar-nav li:nth-child(3) {
+        margin-right: 0;
+        text-align: right;
+    }
+        
+    ul.calendar-nav li a {
+        padding-left: 14.2857143%; /* 20 / 140 */
+    }
+
+    ul.calendar-nav li a#next_month {
+        padding-right: 14.2857143%; /* 20 / 140 */
+        padding-left: 0;
+    }
+
+    table.calendar td {
+	   height: 40px;
+    }
+        
+    table.calendar td a.vevent {
+        border-top: 1px dotted #e2e2e2;
+    }
+        
+    
+    table.calendar tr td .vevent span.summary { 
+        display: block;
+    }    
+}
+
+@media only screen and (min-width: 700px) {
+    table.calendar thead { /* Reveal table */
+        display: table-header-group;
+    }
+    
+    table.calendar tbody { /* Reveal table */
+        display: table-footer-group;
+    }
+    
+    table.calendar:after {  
+        content: "";
+        width: 100%;
+    }
+    
+    table.calendar td {
+	   height: 100px;
+    }
+}

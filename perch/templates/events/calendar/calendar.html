@@ -1,0 +1,17 @@
+<h2><perch:events id="selected_month" format="%B %Y" /></h2>
+
+<ul class="calendar-nav">
+    <li><a class="paging-prev" href="?d=<perch:events id="prev_month" format="Y-m" />"> <perch:events id="prev_month" format="%b %Y" /></a></li>
+    <li><a href="?d=<perch:events id="current_month" format="Y-m" />">*</a></li>
+    <li><a class="paging-next" href="?d=<perch:events id="next_month" format="Y-m" />"><perch:events id="next_month" format="%b %Y" /> </a></li>
+</ul>
+
+<table class="calendar">
+    <thead>
+        <perch:events id="header" encode="false" />
+    </thead>
+    <tbody>
+        <perch:events id="body" encode="false" />
+    </tbody>
+</table>
+

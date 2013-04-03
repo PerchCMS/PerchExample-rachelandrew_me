@@ -1,0 +1,36 @@
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteRule ^blog/category/([a-zA-Z0-9-/]+)/page/([0-9]+)/{0,1}$ /blog/archive.php?cat=$1&page=$2 [L]
+RewriteRule ^blog/category/([a-zA-Z0-9-/]+)$ /blog/archive.php?cat=$1 [L]
+
+RewriteRule ^blog/date/([a-zA-Z0-9-/]+)/page/([0-9]+)/{0,1}$ /blog/archive.php?year=$1&page=$2 [L]
+RewriteRule ^blog/date/([a-zA-Z0-9-/]+)$ /blog/archive.php?year=$1 [L]
+
+RewriteRule ^blog/tag/([a-zA-Z0-9-/]+)/page/([0-9]+)/{0,1}$ /blog/archive.php?tag=$1&page=$2 [L]
+RewriteRule ^blog/tag/([a-zA-Z0-9-/]+)$ /blog/archive.php?tag=$1 [L]
+
+RewriteRule ^blog/page/([0-9]+)/{0,1}$ /blog/index.php?page=$1 [L]
+RewriteRule ^blog/([a-zA-Z0-9-/]+)/preview$ /blog/post.php?s=$1&preview=all [L]
+RewriteRule ^blog/([a-zA-Z0-9-/]+)$ /blog/post.php?s=$1 [L]
+
+RewriteRule ^feed$ /blog/rss.php [L]
+RewriteRule ^feed/$ /blog/rss.php [L]
+
+</IfModule>
+
+
+
+
+
+
+# Remove trailing slashes.
+# e.g. example.com/foo/ will redirect to example.com/foo
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([^archives](.+))/$ /$1 [R=permanent,QSA,L]
+
+# Redirect to PHP if it exists.
+# e.g. example.com/foo will display the contents of example.com/foo.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^(.+)$ $1.php [L,QSA]

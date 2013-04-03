@@ -1,0 +1,11 @@
+<perch:before>
+    <div class="eventwrap">
+    <span class="day"><perch:events id="eventDateTime" format="j" /></span>
+</perch:before>
+
+<div class="vevent event">
+    <a href="<perch:events id="eventURL" />"><span class="time dtstart"><span class="value-title" title="<perch:events id="eventDateTime" format="c" />"><perch:events id="eventDateTime" format="%l:%M%p" /></span> </span>
+    <span class="summary <perch:events id="category_slugs" />"><perch:events id="eventTitle" /></span>
+    </a>
+</div>
+<perch:after></div></perch:after>
